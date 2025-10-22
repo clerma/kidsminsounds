@@ -85,9 +85,6 @@ defaults:
   values:
     permalink: "/ohh-snap-blog/:title"
     layout: post
-myinstants:
-    email: "Opelousaskids@oscfamily.com"
-    password: "OpelousasKids"
 assets:
   cdn:
     # url: https://rtg82ywq.tinifycdn.com
