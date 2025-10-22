@@ -1,0 +1,120 @@
+---
+timezone: America/Chicago
+baseurl: ""
+url:
+include: ['_pages', '_data','_vendors']
+name:
+description:
+author:
+relative_permalinks: false
+favicon: /assets/favicon/favicon.ico
+disqus:
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics:
+logo:
+locale: en_us
+social:
+  name:
+  links:
+    -
+    -
+twitter:
+  username:
+address:
+  street:
+  city:
+  region:
+  zip:
+  country:
+latitude:
+longitude:
+phone:
+og_image:
+google_site_verification:
+bing_site_verification:
+location:
+alt_location:
+  - location:
+    url:
+local_keywords:
+local_competitors:
+snipcart_key:
+snipcart_currency:
+collections:
+defaults:
+- scope:
+    path: ""
+  values:
+    layout: default
+    _options:
+      content: &content_defaults
+        uploads_dir: "uploads/:title"
+        format: p h1 h2 h3 h4 h5 h6 div
+        styles: /assets/css/theme.css
+        undo: true
+        redo: true
+        left: text-left
+        center: text-center
+        right: text-right
+        justify: justify-content-center
+        bold: true
+        italic: true
+        underline: true
+        strike: true
+        subscript: false
+        superscript: false
+        blockquote: true
+        table: true
+        copyformatting: true
+        removeformat: true
+        numberedlist: true
+        bulletedlist: true
+        outdent: false
+        indent: false
+        image: true
+        link: true
+        embed: true
+- scope:
+    type: pages
+    path: _pages/index.html
+  values:
+    permalink:
+- scope:
+    path: "_posts/blog"
+    type: posts
+  values:
+    permalink: "/ohh-snap-blog/:title"
+    layout: post
+myinstants:
+    email: "Opelousaskids@oscfamily.com"
+    password: "OpelousasKids"
+assets:
+  cdn:
+    # url: https://rtg82ywq.tinifycdn.com
+# If you're hosting your site at a Project repository on GitHub pages
+# (http://yourusername.github.io/repository-name)
+# and NOT your User repository (http://yourusername.github.io)
+# then add in the baseurl here, like this: "/repository-name"
+# http://jekyllrb.com/docs/pagination/
+# paginate: 3
+# paginate_path: '/page:num/'
+
+# Permalinks
+permalink: pretty
+plugins:
+  #- jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+  - nokogiri
+exclude:
+    - .jekyll-cache/
+    - gemfiles/
+    - Gemfile
+    - Gemfile.lock
+    - vendor/bundle/
+    - vendor/cache/
+    - vendor/gems/
+    - vendor/ruby/
+    - _site

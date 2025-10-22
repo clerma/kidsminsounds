@@ -1,0 +1,83 @@
+
+.instant {
+    position:relative;
+    vertical-align:top;
+    width: 94px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.small-button {
+    width: 94px;
+    height: 89px;
+    position: absolute;
+    background: url('/assets/img/transparent_button_small_sprite.png') no-repeat;
+    background-position: -5px -5px;
+    border: 0;
+    display: block;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.small-button:focus {
+    background: url('/assets/img/transparent_button_small_sprite.png') no-repeat;
+    background-position: -5px -5px;
+}
+
+.small-button:active {
+    background: url('/assets/img/transparent_button_small_sprite.png') no-repeat;
+    background-position: -109px -5px;
+}
+
+.small-button-background {
+    width: 86px;
+    height: 84px;
+    margin-top: 3px;
+    margin-left: 3px;
+    position: absolute;
+}
+
+.small-button-shadow {
+    width: 94px;
+    height: 89px;
+    margin-bottom:5px;
+    background: url('/assets/img/transparent_button_small_shadow.png') no-repeat;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.large-button {
+    width: 200px;
+    height: 190px;
+    position: absolute;
+    background: url('/assets/img/transparent_button_sprite.png') no-repeat;
+    background-position: -5px -5px;
+    border: 0;
+    display: block;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.large-button:focus {
+    background: url('/assets/img/transparent_button_sprite.png') no-repeat;
+    background-position: -5px -5px;
+}
+
+.large-button:active {
+    background: url('/assets/img/transparent_button_sprite.png') no-repeat ;
+    background-position: -215px -5px;
+}
+
+.large-button-background {
+    width: 188px;
+    height: 174px;
+    margin-top: 7px;
+    margin-left: 6px;
+    position: absolute;
+}
+
+.large-button-shadow {
+    width: 200px;
+    height: 190px;
+    background: url('/assets/img/transparent_button_shadow.png') no-repeat;
+}

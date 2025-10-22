@@ -1,0 +1,62 @@
+---
+title:
+description: >-
+keywords: >-
+image:
+banner:
+  image:
+  video:
+  preheading:
+  title:
+  subtext:
+layout: default
+permalink: /
+---
+     <main>
+ <div class="pattern-square"></div>
+ <!--Pageheader start-->
+ <section class="py-5 py-lg-8">
+    <div class="container">
+       <div class="row">
+
+  {% for sound in site.data.myinstants_favorites %}
+  <div class="col-2 instant text-center my-2 justify-content-center">
+    <div class="justify-content-center w-50 mx-auto">
+<div class="circle small-button-background" style="background-color:#FF0000;"></div>
+
+<button class="small-button" onclick="play('{{ sound.url | replace: 'https://www.myinstants.com', '' }}',
+                    'loader-{{ forloop.index }}',
+                    'sound-{{ forloop.index }}')" title="Play {{ sound.name | escape }} sound" type="button">
+</button>
+
+<div id="loader-{{ forloop.index }}" class="loader"></div>
+<div class="small-button-shadow"></div>
+    </div>
+    <div style="height:50px;">
+<a href="{{ sound.url | replace: '/media/sounds/', '/en/instant/' | replace: '.mp3', '' }}/" class="instant-link link-secondary text-dark">
+  {{ sound.name | remove: 'mp3' | capitalize}}
+</a>
+    </div>
+
+</div>
+{% endfor %}
+
+       </div>
+    </div>
+ </section>
+     </main>
+<script>
+  // optional: simple audio playback fallback
+  function play(src, loaderId) {
+    const audio = new Audio('https://www.myinstants.com' + src);
+    audio.play();
+  }
+  function copyInstantLink(url) {
+    navigator.clipboard.writeText(url);
+  }
+  function share(title, link, src) {
+    if (navigator.share) {
+      navigator.share({ title, url: link });
+    }
+  }
+</script>

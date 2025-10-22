@@ -1,0 +1,43 @@
+---
+layout: default
+disqus: true
+archive: false
+post_class: post-template
+pagename: blogpost
+permalink: ":title/"
+---
+  {% assign author = site.authors[page.author] %}
+    <!-- WELCOME -->
+    <section class="bg-dark pt-10 mt-6">
+      <div class="container-lg">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md-6 col-lg-5 order-md-1 position-relative z1">
+          {% if page.image %}
+            <!-- Image -->
+            <img class="img-fluid mb-4 mb-md-0 post-img" src="{{ page.image }}" alt="{{ page.title }} | {{site.location}} Photo Booth | Ohh Snap">
+            {% endif %}
+          </div>
+          <div class="col-md-7 order-md-0 pt-6 pt-md-10 pb-12 pb-md-13 text-center text-md-start">
+            <!-- Preheading -->
+            <h3 class="font-sans-serif text-warning mb-5">
+              {% assign sortedCategories = page.categories %}{% for category in sortedCategories %}  <a href="categories/#{{ category | slugify }}" class="text-warning">{{ category }}</a>  {% endfor %}
+            </h3>
+            <!-- Heading -->
+            <h1 class="display-3 text-white mb-4">
+             {{ page.title }}
+            </h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CONTENT -->
+    <section class="py-9 py-md-11">
+      <div class="container-lg">
+        <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8 mb-9 blog">
+            <!-- Text -->
+           {{content}}
+          </div>
+        </div>
+      </div>
+    </section>
