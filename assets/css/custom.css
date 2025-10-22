@@ -81,3 +81,13 @@
     height: 190px;
     background: url('/assets/img/transparent_button_shadow.png') no-repeat;
 }
+.instant-link {
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+    line-height: 1.4em;
+    height: 2.8em;
+    overflow: hidden;
+    text-align: center;
+    width: 94px;
+}
