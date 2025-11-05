@@ -57,6 +57,10 @@ _inputs:
     options:
       allow_create: true
       empty_type: array
+      values:
+        - Game Time
+        - Message
+        -
     cascade: true
   tags:
     type: multiselect
