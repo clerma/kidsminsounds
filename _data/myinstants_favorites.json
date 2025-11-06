@@ -57,7 +57,7 @@
   {
     "name": "Buzzer",
     "url": "https://www.myinstants.com/media/sounds/wrong-answer-sound-effect.mp3",
-    "category": ""
+    "category": "Game Time"
   },
   {
     "name": "CELEBRATION",
@@ -77,12 +77,12 @@
   {
     "name": "Correct Ding Gameshow",
     "url": "https://www.myinstants.com/media/sounds/ding-sound-effect.mp3",
-    "category": ""
+    "category": "Game Time"
   },
   {
     "name": "Crickets",
     "url": "https://www.myinstants.com/media/sounds/crickets.swf.mp3",
-    "category": ""
+    "category": "Message"
   },
   {
     "name": "Death sound (Fortnite)",
