@@ -20,77 +20,97 @@ permalink: /
   <section class="py-5 py-lg-8">
     <div class="container">
       <div class="row justify-content-start">
+{%- assign grouped = site.data.myinstants_favorites | group_by: "category" -%}
 
-     {% comment %}
-     Group by category, sort alphabetically, and split into
-     1. those with category names
-     2. those without
-     {% endcomment %}
+      {%- comment -%} buckets {%- endcomment -%}
+      {%- assign with_category = grouped | where_exp: "g", "g.name and g.name != '' and g.name != 'Everything Else'" | sort: "name" -%}
+      {%- assign uncategorized = grouped | where_exp: "g", "g.name == '' or g.name == nil" -%}
+      {%- assign everything_else = grouped | where_exp: "g", "g.name == 'Everything Else'" -%}
 
-     {% assign grouped = site.data.myinstants_favorites | group_by: "category" | sort: "name" %}
-     {% assign with_category = grouped | where_exp: "g", "g.name and g.name != ''" %}
-     {% assign without_category = grouped | where_exp: "g", "g.name == '' or g.name == nil" %}
+      {%- comment -%} 1) all named categories (alpha) {%- endcomment -%}
+      {%- for group in with_category -%}
+        <div class="col-12">
+          <h2 class="mt-4 mb-2">{{ group.name }}</h2>
+          <hr/>
+        </div>
 
-     {%- comment -%}
-     Display all category groups first
-     {%- endcomment -%}
-     {% for group in with_category %}
-       <div class="col-12">
-         <h2 class="mt-4 mb-2">{{ group.name }}</h2>
-         <hr/>
-       </div>
+        {%- for sound in group.items -%}
+        <div class="col instant text-start my-3">
+          <div class="justify-content-start me-auto position-relative" style="width:84px;height:84px;">
+            <div class="circle small-button-background" style="background-color:#FF0000;"></div>
+            <button
+              class="small-button"
+              type="button"
+              onclick="toggleSound('{{ sound.url }}')"
+              title="Play {{ sound.name | escape }}">
+            </button>
+            <div class="small-button-shadow"></div>
+          </div>
 
-       {% for sound in group.items %}
-       <div class="col instant text-start my-3">
-         <div class="justify-content-start me-auto position-relative" style="width:84px;height:84px;">
-           <div class="circle small-button-background" style="background-color:#FF0000;"></div>
-           <button
-             class="small-button"
-             type="button"
-             onclick="toggleSound('{{ sound.url }}')"
-             title="Play {{ sound.name | escape }}">
-           </button>
-           <div class="small-button-shadow"></div>
-         </div>
+          <a href="{{ sound.url | replace: '/media/sounds/', '/en/instant/' | replace: '.mp3', '' }}/"
+             class="instant-link link-secondary text-dark d-block mt-3 small me-auto">
+            {{ sound.name | remove: 'mp3' | capitalize }}
+          </a>
+        </div>
+        {%- endfor -%}
+      {%- endfor -%}
 
-         <a href="{{ sound.url | replace: '/media/sounds/', '/en/instant/' | replace: '.mp3', '' }}/"
-            class="instant-link link-secondary text-dark d-block mt-3 small me-auto">
-           {{ sound.name | remove: 'mp3' | capitalize }}
-         </a>
-       </div>
-       {% endfor %}
-     {% endfor %}
+      {%- comment -%} 2) uncategorized (blank) {%- endcomment -%}
+      {%- if uncategorized and uncategorized.size > 0 and uncategorized[0].items and uncategorized[0].items.size > 0 -%}
+        <div class="col-12">
+          <hr class="my-4"/>
+        </div>
 
-     {%- comment -%}
-     If there are any uncategorized sounds, show them after a divider
-     {%- endcomment -%}
-     {% if without_category and without_category[0].items.size > 0 %}
-       <div class="col-12">
-         <hr class="my-4"/>
-       </div>
+        {%- assign unc = uncategorized[0] -%}
+        {%- for sound in unc.items -%}
+        <div class="col instant text-start my-3">
+          <div class="justify-content-start me-auto position-relative" style="width:84px;height:84px;">
+            <div class="circle small-button-background" style="background-color:#FF0000;"></div>
+            <button
+              class="small-button"
+              type="button"
+              onclick="toggleSound('{{ sound.url }}')"
+              title="Play {{ sound.name | escape }}">
+            </button>
+            <div class="small-button-shadow"></div>
+          </div>
 
-       {% for sound in without_category[0].items %}
-       <div class="col instant text-start my-3">
-         <div class="justify-content-start me-auto position-relative" style="width:84px;height:84px;">
-           <div class="circle small-button-background" style="background-color:#FF0000;"></div>
-           <button
-             class="small-button"
-             type="button"
-             onclick="toggleSound('{{ sound.url }}')"
-             title="Play {{ sound.name | escape }}">
-           </button>
-           <div class="small-button-shadow"></div>
-         </div>
+          <a href="{{ sound.url | replace: '/media/sounds/', '/en/instant/' | replace: '.mp3', '' }}/"
+             class="instant-link link-secondary text-dark d-block mt-3 small me-auto">
+            {{ sound.name | remove: 'mp3' | capitalize }}
+          </a>
+        </div>
+        {%- endfor -%}
+      {%- endif -%}
 
-         <a href="{{ sound.url | replace: '/media/sounds/', '/en/instant/' | replace: '.mp3', '' }}/"
-            class="instant-link link-secondary text-dark d-block mt-3 small">
-           {{ sound.name | remove: 'mp3' | capitalize }}
-         </a>
-       </div>
-       {% endfor %}
-     {% endif %}
+      {%- comment -%} 3) “Everything Else” LAST {%- endcomment -%}
+      {%- if everything_else and everything_else.size > 0 and everything_else[0].items and everything_else[0].items.size > 0 -%}
+        <div class="col-12">
+          <h2 class="mt-4 mb-2">Everything Else</h2>
+          <hr/>
+        </div>
 
+        {%- assign ee = everything_else[0] -%}
+        {%- for sound in ee.items -%}
+        <div class="col instant text-start my-3">
+          <div class="justify-content-start me-auto position-relative" style="width:84px;height:84px;">
+            <div class="circle small-button-background" style="background-color:#FF0000;"></div>
+            <button
+              class="small-button"
+              type="button"
+              onclick="toggleSound('{{ sound.url }}')"
+              title="Play {{ sound.name | escape }}">
+            </button>
+            <div class="small-button-shadow"></div>
+          </div>
 
+          <a href="{{ sound.url | replace: '/media/sounds/', '/en/instant/' | replace: '.mp3', '' }}/"
+             class="instant-link link-secondary text-dark d-block mt-3 small me-auto">
+            {{ sound.name | remove: 'mp3' | capitalize }}
+          </a>
+        </div>
+        {%- endfor -%}
+      {%- endif -%}
 
       </div>
     </div>
