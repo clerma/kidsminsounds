@@ -41,8 +41,8 @@ permalink: /
        </div>
 
        {% for sound in group.items %}
-       <div class="col-md-1 col-3 instant text-center my-3">
-         <div class="justify-content-center mx-auto position-relative" style="width:84px;height:84px;">
+       <div class="col instant text-start my-3">
+         <div class="justify-content-start me-auto position-relative" style="width:84px;height:84px;">
            <div class="circle small-button-background" style="background-color:#FF0000;"></div>
            <button
              class="small-button"
@@ -54,7 +54,7 @@ permalink: /
          </div>
 
          <a href="{{ sound.url | replace: '/media/sounds/', '/en/instant/' | replace: '.mp3', '' }}/"
-            class="instant-link link-secondary text-dark d-block mt-2 small mx-auto">
+            class="instant-link link-secondary text-dark d-block mt-3 small me-auto">
            {{ sound.name | remove: 'mp3' | capitalize }}
          </a>
        </div>
@@ -70,8 +70,8 @@ permalink: /
        </div>
 
        {% for sound in without_category[0].items %}
-       <div class="col-md-1 col-3 instant text-center my-3">
-         <div class="justify-content-center mx-auto position-relative" style="width:84px;height:84px;">
+       <div class="col instant text-start my-3">
+         <div class="justify-content-start me-auto position-relative" style="width:84px;height:84px;">
            <div class="circle small-button-background" style="background-color:#FF0000;"></div>
            <button
              class="small-button"
@@ -83,7 +83,7 @@ permalink: /
          </div>
 
          <a href="{{ sound.url | replace: '/media/sounds/', '/en/instant/' | replace: '.mp3', '' }}/"
-            class="instant-link link-secondary text-dark d-block mt-2 small">
+            class="instant-link link-secondary text-dark d-block mt-3 small">
            {{ sound.name | remove: 'mp3' | capitalize }}
          </a>
        </div>
