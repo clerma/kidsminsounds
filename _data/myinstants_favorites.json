@@ -440,8 +440,23 @@
     "category": "Message"
   },
   {
-    "name": "Clean Up",
+    "name": "Clean Up Crew",
     "url": "https://www.myinstants.com/media/sounds/clean-up.mp3",
+    "category": "Clean Up"
+  },
+  {
+    "name": "Clean up your Room",
+    "url": "https://www.myinstants.com/media/sounds/clean-up-your-room.mp3",
+    "category": "Clean Up"
+  },
+  {
+    "name": "Clean up your room clean up",
+    "url": "https://www.myinstants.com/media/sounds/clean-up-your-room-clean-up-your-room.mp3",
+    "category": "Clean Up"
+  },
+  {
+    "name": "Clean Up that mess",
+    "url": "https://www.myinstants.com/media/sounds/clean-up-that-mess.mp3",
     "category": "Clean Up"
   }
 ]
