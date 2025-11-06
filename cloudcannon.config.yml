@@ -72,11 +72,13 @@ _inputs:
   category:
     type: select
     options:
-      allow_create: true
+      allow_create: false
       allow_empty: true
       values:
         - Game Time
         - Message
+        - Clean Up
+        - Everything Else
       value_key:
       preview:
       picker_preview:
