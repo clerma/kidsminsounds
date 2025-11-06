@@ -14,6 +14,8 @@ collections_config:
     path: _data
     icon: notes
     disable_url: false
+    description: ''
+    _enabled_editors:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
@@ -52,16 +54,6 @@ _enabled_editors:
   - content
   - visual
 _inputs:
-  categories:
-    type: multiselect
-    options:
-      allow_create: true
-      empty_type: array
-      values:
-        - Game Time
-        - Message
-        -
-    cascade: true
   tags:
     type: multiselect
     options:
@@ -76,6 +68,20 @@ _inputs:
     cascade: true
   description:
     type: textarea
+    cascade: true
+  category:
+    type: select
+    options:
+      allow_create: true
+      allow_empty: true
+      values:
+        - Game Time
+        - Message
+      value_key:
+      preview:
+      picker_preview:
+      view:
+      picker_view:
     cascade: true
 _select_data:
   social:
