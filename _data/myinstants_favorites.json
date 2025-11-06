@@ -441,7 +441,12 @@
   },
   {
     "name": "Fresh and Clean",
-    "url": "https://www.myinstants.com/en/instant/fresh-and-clean-36705",
+    "url": "https://www.myinstants.com/media/sounds/outkast-so-fresh-so-clean-official-hd-video-mp3cut.mp3",
     "category": "Message"
+  },
+  {
+    "name": "Clean Up",
+    "url": "https://www.myinstants.com/media/sounds/clean-up.mp3",
+    "category": "Clean Up"
   }
 ]
