@@ -11,7 +11,7 @@
     width: 94px;
     height: 89px;
     position: absolute;
-    background: url('/assets/img/transparent_button_small_sprite.png') no-repeat;
+    background: url('../img/transparent_button_small_sprite.png') no-repeat;
     background-position: -5px -5px;
     border: 0;
     display: block;
@@ -19,12 +19,12 @@
 }
 
 .small-button:focus {
-    background: url('/assets/img/transparent_button_small_sprite.png') no-repeat;
+    background: url('../img/transparent_button_small_sprite.png') no-repeat;
     background-position: -5px -5px;
 }
 
 .small-button:active {
-    background: url('/assets/img/transparent_button_small_sprite.png') no-repeat;
+    background: url('../img/transparent_button_small_sprite.png') no-repeat;
     background-position: -109px -5px;
 }
 
@@ -40,7 +40,7 @@
     width: 94px;
     height: 89px;
     margin-bottom:5px;
-    background: url('/assets/img/transparent_button_small_shadow.png') no-repeat;
+    background: url('../img/transparent_button_small_shadow.png') no-repeat;
 }
 
 .circle {
@@ -51,7 +51,7 @@
     width: 200px;
     height: 190px;
     position: absolute;
-    background: url('/assets/img/transparent_button_sprite.png') no-repeat;
+    background: url('../img/transparent_button_sprite.png') no-repeat;
     background-position: -5px -5px;
     border: 0;
     display: block;
@@ -59,12 +59,12 @@
 }
 
 .large-button:focus {
-    background: url('/assets/img/transparent_button_sprite.png') no-repeat;
+    background: url('../img/transparent_button_sprite.png') no-repeat;
     background-position: -5px -5px;
 }
 
 .large-button:active {
-    background: url('/assets/img/transparent_button_sprite.png') no-repeat ;
+    background: url('../img/transparent_button_sprite.png') no-repeat ;
     background-position: -215px -5px;
 }
 
@@ -79,7 +79,7 @@
 .large-button-shadow {
     width: 200px;
     height: 190px;
-    background: url('/assets/img/transparent_button_shadow.png') no-repeat;
+    background: url('../img/transparent_button_shadow.png') no-repeat;
 }
 .instant-link {
     font-size: 14px;
